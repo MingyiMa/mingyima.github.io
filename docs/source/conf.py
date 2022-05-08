@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'hekfan'
+project = 'hekfan.net'
 copyright = '2022, Steve Ma'
 author = 'Steve Ma'
 
