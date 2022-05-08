@@ -4,4 +4,4 @@
 .venv
 
 # sphinx
-docs/build/doctrees
+docs/doctrees
