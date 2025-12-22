@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://mingyima.github.io/sitemap.xml
