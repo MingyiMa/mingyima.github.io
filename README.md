@@ -244,6 +244,7 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [Mobile](#mobile)
   - [Table Of Contents](#table-of-contents)
   - [Getting started](#getting-started)
+  - [Troubleshooting Deployment](#troubleshooting-deployment)
   - [Installing and Deploying](#installing-and-deploying)
   - [Customizing](#customizing)
   - [Features](#features)
@@ -274,6 +275,24 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 ## Getting started
 
 Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/). Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)! Why write a blog? Read [Rachel Thomas blog post](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045).
+
+## Troubleshooting Deployment
+
+### GitHub Pages Build Fails with "No such file or directory - docs"
+
+If your GitHub Actions build fails with an error like:
+```
+No such file or directory @ dir_chdir0 - /github/workspace/docs
+```
+
+This means GitHub Pages is configured to build from a `docs` folder, but al-folio uses a custom deployment workflow. To fix this:
+
+1. First, ensure the `Deploy site` workflow has run successfully (check the Actions tab)
+2. Go to **Settings → Pages → Build and deployment**
+3. Set **Source** to `Deploy from a branch`
+4. Set **Branch** to `gh-pages` (NOT `main` or `docs`)
+
+The al-folio template uses a custom GitHub Action that builds the site and deploys it to the `gh-pages` branch. The built-in Jekyll builder should not be used.
 
 ## Installing and Deploying
 
